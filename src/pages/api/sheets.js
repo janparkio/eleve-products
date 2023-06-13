@@ -25,8 +25,8 @@ export default async function handler(req, res) {
     // Handle GET request
     try {
       const response = await sheets.spreadsheets.values.get(request);
-      const phoneNumber = req.query.phone; // Get phone number from query parameter
-
+      const phoneNumber = req.query.phone.replace(' ', '+'); // Get phone number from query parameter and replace space with "+"
+      
       const data = response.data.values;
       const values = data.map((row, index) => ({
         id: index + 2, // plus 2 to account for spreadsheet header and 0-based index
