@@ -10,19 +10,6 @@ const auth = new google.auth.GoogleAuth({
   scopes: ['https://www.googleapis.com/auth/spreadsheets'],
 });
 
-console.log('Environment Variable:', process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS);
-
-const base64DecodedCredentials = Buffer.from(process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS, 'base64').toString();
-console.log('Base64 Decoded Credentials:', base64DecodedCredentials);
-
-try {
-    const serviceAccountCredentials = JSON.parse(base64DecodedCredentials);
-    console.log('Parsed Credentials:', serviceAccountCredentials);
-} catch (error) {
-    console.error('Error Parsing JSON:', error);
-}
-
-
 export default async function handler(req, res) {
   // Get auth client
   const authClient = await auth.getClient();
@@ -38,24 +25,24 @@ export default async function handler(req, res) {
     // Handle GET request
     try {
       const response = await sheets.spreadsheets.values.get(request);
-      return res.status(200).json(response.data);
+      const phoneNumber = req.query.phone; // Get phone number from query parameter
+      const data = response.data.values;
+      if (phoneNumber) {
+        const found = data.find(row => row[0] === phoneNumber); // Assuming the phone number is in the first column
+        if (found) {
+          return res.status(200).json(found);
+        } else {
+          return res.status(404).json({ error: 'No data found for this phone number' });
+        }
+      } else {
+        return res.status(200).json(response.data);
+      }
     } catch (error) {
       return res.status(500).json({ error: error.toString() });
     }
   } else if (req.method === 'POST') {
     // Handle POST request
-    try {
-      // TODO: Replace with the new data
-      const newData = req.body;
-      request['resource'] = {
-        values: newData,
-      };
-      request['valueInputOption'] = 'USER_ENTERED';
-      const response = await sheets.spreadsheets.values.update(request);
-      return res.status(200).json(response.data);
-    } catch (error) {
-      return res.status(500).json({ error: error.toString() });
-    }
+    // ...
   } else {
     // Handle unsupported HTTP methods
     return res.status(405).json({ error: 'Method Not Allowed' });
