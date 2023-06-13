@@ -1,34 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Google Sheets API Integration
+
+This project integrates with the Google Sheets API to fetch data from a Google Sheet based on a phone number query.
 
 ## Getting Started
 
-First, run the development server:
+First, you need to set up your Google Cloud project and service account:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+1. Go to the [Google Cloud Console](https://console.cloud.google.com/).
+2. Create a new project.
+3. Enable the Google Sheets API for your project.
+4. Create a new service account and download the JSON credentials file.
+5. Share your Google Sheet with the service account email.
+
+Then, you need to set up your environment variables:
+
+1. Convert your service account credentials JSON file to a base64 string. For example, in a Unix-like system, you can use the `base64` command in the terminal:
+   ```bash
+   base64 service-account-file.json
+   ```
+2. Set the base64 string as an environment variable named `GOOGLE_SERVICE_ACCOUNT_CREDENTIALS` in your hosting environment.
+
+## Usage
+
+This project exposes an API endpoint that you can use to fetch data from your Google Sheet. The endpoint is:
+
+```
+https://your-domain/api/sheets?phone=<phone_number>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Replace `<phone_number>` with the phone number you're looking for. Note that the "+" character should be URL encoded as "%2B".
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+If data matching the phone number is found in the sheet, it will be returned in the response. If not, the server will respond with a 404 status and an error message.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Code Overview
 
-## Learn More
+The main code is located in the `handler` function, which is exported as the default function of the module. The function checks if the request is a GET request, and if so, fetches data from the Google Sheet and filters it based on the phone number query. If the request is not a GET request, it responds with a 405 status and an error message.
 
-To learn more about Next.js, take a look at the following resources:
+The phone number query is sanitized by replacing any spaces with an empty string. This is necessary because the "+" character in a URL is interpreted as a space.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[MIT](https://choosealicense.com/licenses/mit/)
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Please replace "https://your-domain" with your actual domain. This is a very basic README file, you may want to add more sections according to your project's needs, like sections for 'Installation', 'Testing', etc.
