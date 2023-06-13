@@ -26,17 +26,30 @@ export default async function handler(req, res) {
     try {
       const response = await sheets.spreadsheets.values.get(request);
       const phoneNumber = req.query.phone; // Get phone number from query parameter
+
       const data = response.data.values;
+      const values = data.map((row, index) => ({
+        id: index + 2, // plus 2 to account for spreadsheet header and 0-based index
+        data: row,
+      }));
+
+      const result = {
+        range: response.data.range,
+        majorDimension: response.data.majorDimension,
+        values: values,
+      }
+
       if (phoneNumber) {
-        const found = data.find(row => row[0] === phoneNumber); // Assuming the phone number is in the first column
+        const found = result.values.find(entry => entry.data[0] === phoneNumber);
         if (found) {
           return res.status(200).json(found);
         } else {
           return res.status(404).json({ error: 'No data found for this phone number' });
         }
-      } else {
-        return res.status(200).json(response.data);
       }
+
+      return res.status(200).json(result);
+      
     } catch (error) {
       return res.status(500).json({ error: error.toString() });
     }
