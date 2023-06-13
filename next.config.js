@@ -4,6 +4,7 @@ const nextConfig = {
     GOOGLE_SERVICE_ACCOUNT_CREDENTIALS:
       process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS,
   },
+  output: 'export',
 };
 
 module.exports = nextConfig;
