@@ -25,7 +25,7 @@ export default async function handler(req, res) {
     // Handle GET request
     try {
       const response = await sheets.spreadsheets.values.get(request);
-      const phoneNumber = req.query.phone.replace(' ', '+'); // Get phone number from query parameter and replace space with "+"
+      const phoneNumber = req.query.phone.replace(' ', ''); // Get phone number from query parameter and replace space with empty ""
       
       const data = response.data.values;
       const values = data.map((row, index) => ({
