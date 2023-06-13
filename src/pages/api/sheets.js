@@ -17,7 +17,7 @@ export default async function handler(req, res) {
     // TODO: Replace with your Google Sheets ID
     spreadsheetId: '1Hc_OwLZiJCj8yiWQemx1ZIk00seDwlABH8K0wxNLaFg',
     // TODO: Replace with the range of cells to fetch
-    range: 'Grado-3!A2:Q100000',
+    range: 'UA-GD-DB!A2:Q100000',
     auth: authClient,
   };
 
