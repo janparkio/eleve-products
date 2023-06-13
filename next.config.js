@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  env: {
+    GOOGLE_SERVICE_ACCOUNT_CREDENTIALS:
+      process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS,
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

@@ -10,6 +10,19 @@ const auth = new google.auth.GoogleAuth({
   scopes: ['https://www.googleapis.com/auth/spreadsheets'],
 });
 
+console.log('Environment Variable:', process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS);
+
+const base64DecodedCredentials = Buffer.from(process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS, 'base64').toString();
+console.log('Base64 Decoded Credentials:', base64DecodedCredentials);
+
+try {
+    const serviceAccountCredentials = JSON.parse(base64DecodedCredentials);
+    console.log('Parsed Credentials:', serviceAccountCredentials);
+} catch (error) {
+    console.error('Error Parsing JSON:', error);
+}
+
+
 export default async function handler(req, res) {
   // Get auth client
   const authClient = await auth.getClient();
