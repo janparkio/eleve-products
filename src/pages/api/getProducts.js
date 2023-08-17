@@ -1,5 +1,27 @@
 const products = [
   {
+    hs_slug_code: "adv-dgth",
+    md_codigo_carrera: "ADV-DGTH",
+    hs_nombre_producto:
+      "Advance - Diplomado en Dirección y Gestión del Talento Humano",
+    md_id_carrera: "fd3e04c6-363d-ee11-b987-0050568952e6",
+    md_tipo_carrera: "PROGRAMAS ESPECIALES",
+    md_nombre_carrera: "Advance - Diplomado en Dirección y Gestión del Talento Humano",
+    md_landing_value: "ADV-DGTH",
+    modality: "Virtual",
+  },
+  {
+    hs_slug_code: "adv-dmdprs",
+    md_codigo_carrera: "ADV-DMDPRS",
+    hs_nombre_producto:
+      "Advance - Diplomado en Marketing Digital y Publicidad en Redes Sociales",
+    md_id_carrera: "56ad77fc-363d-ee11-b987-0050568952e6",
+    md_tipo_carrera: "PROGRAMAS ESPECIALES",
+    md_nombre_carrera: "Advance - Diplomado en Marketing Digital y Publicidad en Redes Sociales",
+    md_landing_value: "ADV-DMDPRS",
+    modality: "Virtual",
+  },
+  {
     hs_slug_code: "adv-fced",
     md_codigo_carrera: "ADV-FCED",
     hs_nombre_producto:
