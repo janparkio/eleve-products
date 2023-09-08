@@ -11,6 +11,16 @@ const products = [
     modality: "Virtual",
   },
   {
+hs_slug_code: "adv-cimv",
+md_codigo_carrera: "adv-cimv",
+hs_nombre_producto: "Advance - Curso de Inversiones en el Mercado de Valores",
+md_id_carrera: "748e5c78-744e-ee11-b987-0050568952e6",
+md_tipo_carrera: "PROGRAMAS ESPECIALES",
+md_nombre_carrera: "Advance - Curso de Inversiones en el Mercado de Valores",
+md_landing_value: "adv-cimv",
+modality: "Presencial",
+  },
+  {
     hs_slug_code: "adv-dmdprs",
     md_codigo_carrera: "ADV-DMDPRS",
     hs_nombre_producto:
