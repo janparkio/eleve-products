@@ -11,6 +11,50 @@ const products = [
     modality: "Virtual",
   },
   {
+    hs_slug_code: "adv-decm",
+    md_codigo_carrera: "adv-decm",
+    hs_nombre_producto:
+      "Advance - Diplomado en Estrategias de Community Management",
+    md_id_carrera: "0f15eb80-6059-ee11-b989-0050568952e6",
+    md_tipo_carrera: "PROGRAMAS ESPECIALES",
+    md_nombre_carrera: "Advance - Diplomado en Estrategias de Community Management",
+    md_landing_value: "adv-decm",
+    modality: "Virtual",
+  },
+  {
+    hs_slug_code: "adv-dbiad",
+    md_codigo_carrera: "adv-dbiad",
+    hs_nombre_producto:
+      "Advance - Diplomado en Business Intelligence y Análisis de Datos",
+    md_id_carrera: "bf17691a-6159-ee11-b989-0050568952e6",
+    md_tipo_carrera: "PROGRAMAS ESPECIALES",
+    md_nombre_carrera: "Advance - Diplomado en Business Intelligence y Análisis de Datos",
+    md_landing_value: "adv-dbiad",
+    modality: "Virtual",
+  },
+  {
+    hs_slug_code: "adv-dpm",
+    md_codigo_carrera: "adv-dpm",
+    hs_nombre_producto:
+      "Advance - Diplomado en Project Management",
+    md_id_carrera: "a34e2a3a-6159-ee11-b989-0050568952e6",
+    md_tipo_carrera: "PROGRAMAS ESPECIALES",
+    md_nombre_carrera: "Advance - Diplomado en Project Management",
+    md_landing_value: "adv-dpm",
+    modality: "Virtual",
+  },
+  {
+    hs_slug_code: "adv-dtohp",
+    md_codigo_carrera: "adv-dtohp",
+    hs_nombre_producto:
+      "Advance - Diplomado en Técnicas de Oratoria para Hablar en Público",
+    md_id_carrera: "11b6ceec-6059-ee11-b989-0050568952e6",
+    md_tipo_carrera: "PROGRAMAS ESPECIALES",
+    md_nombre_carrera: "Advance - Diplomado en Técnicas de Oratoria para Hablar en Público",
+    md_landing_value: "adv-dtohp",
+    modality: "Virtual",
+  },
+  {
 hs_slug_code: "adv-cimv",
 md_codigo_carrera: "adv-cimv",
 hs_nombre_producto: "Advance - Curso de Inversiones en el Mercado de Valores",
