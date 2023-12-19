@@ -30,11 +30,14 @@ export default async function handler(req, res) {
       const data = response.data.values;
       const values = data.map((row, index) => ({
         id: index + 1, // plus 2 to account for spreadsheet header and 0-based index
-        product_id_dynamics: row[0],
-        slug: row[1],
-        mallaLink: row[2],
-        productName: row[3],
-        productCategory: row[4],
+        product_id_dynamics: row[0], // Column: A
+        slug: row[2], // Column: C
+        mallaLink: row[3], // Column: D
+        productName: row[4], // Column: E
+        productCategory: row[5], // Column: F
+        cuotaNuevo: row[8], // Column: I
+        description: row[9], // Column: J
+        inicioClases: row[10], // Column: K
       }));
 
       if (carreraId) {
