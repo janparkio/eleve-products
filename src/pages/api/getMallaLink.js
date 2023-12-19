@@ -17,7 +17,7 @@ export default async function handler(req, res) {
     // TODO: Replace with your Google Sheets ID
     spreadsheetId: '1e_xRv3VqNzlBJD1zl1Jls2rNY9wpB9CG42CgAHzGi2M',
     // TODO: Replace with the range of cells to fetch
-    range: 'mallas!A1:E10000',
+    range: 'mallas!A1:Z10000',
     auth: authClient,
   };
 
@@ -37,7 +37,7 @@ export default async function handler(req, res) {
         productCategory: row[5], // Column: F
         cuotaNuevo: row[8], // Column: I
         description: row[9], // Column: J
-        inicioClases: row[10], // Column: K
+        inicioClases: row[10] // Column: K
       }));
 
       if (carreraId) {
