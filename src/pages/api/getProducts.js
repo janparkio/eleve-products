@@ -1566,6 +1566,26 @@ modality: "Presencial",
     md_landing_value: "wz-w-on",
     modality: "Virtual",
   },
+  {
+  hs_slug_code: "wz-in-on",
+    md_codigo_carrera: "wz-in-on",
+      hs_nombre_producto: "Wizard - W - Online - Interactive",
+        md_id_carrera: "d700224c-9ebf-ee11-b993-0050568952e6",
+          md_tipo_carrera: "IDIOMAS",
+            md_nombre_carrera: "Wizard - W - Online - Interactive",
+              md_landing_value: "wz-in-on",
+                modality: "Virtual",
+  },
+  {
+    hs_slug_code: "wz-cn-on",
+      md_codigo_carrera: "wz-cn-on",
+        hs_nombre_producto: "Wizard - W - Online - Connections",
+          md_id_carrera: "2840a076-9fbf-ee11-b993-0050568952e6",
+            md_tipo_carrera: "IDIOMAS",
+              md_nombre_carrera: "Wizard - W - Online - Connections",
+                md_landing_value: "wz-cn-on",
+                  modality: "Virtual",
+    },
 ];
 
 export default function handler(req, res) {
