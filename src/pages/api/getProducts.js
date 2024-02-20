@@ -1586,6 +1586,16 @@ modality: "Presencial",
                 md_landing_value: "wz-cn-on",
                   modality: "Virtual",
     },
+    {
+      hs_slug_code: "wz-cb-gn",
+      md_codigo_carrera: "wz-cb-gn",
+      hs_nombre_producto: "Conversation Club - Wizard",
+      md_id_carrera: "8bcf1993-f6cf-ee11-b993-0050568952e6",
+      md_tipo_carrera: "WIZARD",
+      md_nombre_carrera: "Conversation Club - Wizard",
+      md_landing_value: "wz-cb-gn",
+      modality: "Presencial",
+    },
 ];
 
 export default function handler(req, res) {
