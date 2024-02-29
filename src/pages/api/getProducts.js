@@ -1596,6 +1596,26 @@ modality: "Presencial",
       md_landing_value: "wz-cb-gn",
       modality: "Presencial",
     },
+    {
+      hs_slug_code: "wz-int-pr-cn",
+      md_codigo_carrera: "wz-int-pr-cn",
+      hs_nombre_producto: "Wizard-Intensive-Presencial-Connections",
+      md_id_carrera: "e6a867dc-2cd7-ee11-b993-0050568952e6",
+      md_tipo_carrera: "WIZARD",
+      md_nombre_carrera: "Wizard-Intensive-Presencial-Connections",
+      md_landing_value: "wz-int-pr-cn",
+      modality: "Presencial",
+    },
+     {
+      hs_slug_code: "wz-int-on-cn",
+      md_codigo_carrera: "wz-int-on-cn",
+      hs_nombre_producto: "Wizard-Intensive-Online-Connections",
+      md_id_carrera: "b987a80a-2dd7-ee11-b993-0050568952e6",
+      md_tipo_carrera: "WIZARD",
+      md_nombre_carrera: "Wizard-Intensive-Online-Connections",
+      md_landing_value: "wz-int-on-cn",
+      modality: "Virtual",
+    },
 ];
 
 export default function handler(req, res) {
